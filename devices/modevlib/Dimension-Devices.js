@@ -37,7 +37,8 @@ if (!Mozilla) var Mozilla = {"name": "Mozilla", "edges": []};
 								{"term": {"blocked": 1054172}},
 								{"or": [
 									{"term": {"cf_blocking_b2g": "2.0m?"}},
-									{"term": {"cf_blocking_b2g": "2.0m+"}}
+									{"term": {"cf_blocking_b2g": "2.0m+"}},
+									{"term": {"blocked": 1080337}}
 								]}
 							]},
 							"columnName": "Woodduck",
@@ -51,27 +52,11 @@ if (!Mozilla) var Mozilla = {"name": "Mozilla", "edges": []};
 									"name": "2.0m+",
 									"columnValue": "+",
 									"esfilter": {"term": {"cf_blocking_b2g": "2.0m+"}}
-								}
-							]
-						},
-						{
-							"name": "Woodduck_Blocker",
-							"value": "P1",
-							"esfilter": {"and": [
-								{"term": {"blocked": 1054172}},
-								{"term": {"blocked": 1080337}}
-							]},
-							"columnName": "p1",
-							"partitions": [
-								{
-									"name": "2.0m?",
-									"columnValue": "?",
-									"esfilter": {"terms": {"cf_blocking_b2g": "2.0m?"}}
 								},
 								{
-									"name": "2.0m+",
-									"columnValue": "+",
-									"esfilter": {"terms": {"cf_blocking_b2g": "2.0m+"}}
+									"name": "Blocker",
+									"columnValue": "Blocker",
+									"esfilter": {"term": {"blocked": 1080337}}
 								}
 							]
 						},
