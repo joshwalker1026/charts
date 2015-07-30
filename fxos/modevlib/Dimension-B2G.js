@@ -22,7 +22,7 @@ if (!Mozilla) var Mozilla={"name":"Mozilla", "edges":[]};
 
 	//ADD PROJECTS AND MILESTAONES HERE
 	//BUT REMEMBER TO ADD DETAILED ENTRIES (AT BOTTOM)
-	var PROJECTS = ["1.3", "1.3t", "1.4", "2.0", "2.1", "2.2"];
+	var PROJECTS = ["1.3", "1.3t", "1.4", "2.0", "2.1", "2.2", "2.5"];
 	var NOM_PROJECTS = PROJECTS.map(function (p) {
 		return p + "?";
 	});
@@ -30,7 +30,7 @@ if (!Mozilla) var Mozilla={"name":"Mozilla", "edges":[]};
 		return p + "+";
 	});
 
-	var MILESTONES = ["fx30", "fx31", "fx32", "fx33", "fx34", "fx35", "fx36"];
+	var MILESTONES = ["fx30", "fx31", "fx32", "fx33", "fx34", "fx35", "fx36", "fx37", "fx38", "fx39", "fx40", "fx41", "fx42", "fx43", "fx44"];
 	var NOM_MILESTONES = MILESTONES.map(function (p) {
 		return p + "?";
 	});
@@ -415,6 +415,17 @@ if (!Mozilla) var Mozilla={"name":"Mozilla", "edges":[]};
 								{"terms": {"cf_blocking_loop": ["fx35?", "fx36?", "fx35+", "fx36+"]}}
 							]}
 						},
+						{"name": "2.5",
+							"start_date":"Jun 29, 2015",
+							"targetDate":"Jan 04, 2016",
+							"dateMarks": [
+							],
+							"style": {"color": "#2ca02c"},
+							"esfilter": {"or": [
+								{"terms": {"cf_blocking_b2g": ["2.5+", "2.5?"]}},
+								{"terms": {"cf_blocking_loop": ["fx37?", "fx38?", "fx39?", "fx40?", "fx41?", "fx42?", "fx43?", "fx44?", "fx37+", "fx38+", "fx39+", "fx40+", "fx41+", "fx42+", "fx43+", "fx44+"]}}
+							]}
+						},
 						{"name": "Other", "style": {"color": "#9467bd"}, "esfilter": {"and": [
 							{"not": {"terms": {"cf_blocking_b2g": NOM_PROJECTS.union(BLOCKER_PROJECTS)}}},  //TODO: No way to select 1.3
 							{"not": {"terms": {"cf_blocking_loop": NOM_MILESTONES.union(BLOCKER_MILESTONE)}}}
@@ -458,6 +469,12 @@ if (!Mozilla) var Mozilla={"name":"Mozilla", "edges":[]};
 						"esfilter": {"or":[
 							{"terms": {"cf_blocking_b2g": ["2.2+"]}},
 							{"terms": {"cf_blocking_loop": ["fx35+", "fx36+"]}}
+						]}
+					},
+					{"name": "2.5",
+						"esfilter": {"or":[
+							{"terms": {"cf_blocking_b2g": ["2.5+"]}},
+							{"terms": {"cf_blocking_loop": ["fx37?", "fx38?", "fx39?", "fx40?", "fx41?", "fx42?", "fx43?", "fx44?", "fx37+", "fx38+", "fx39+", "fx40+", "fx41+", "fx42+", "fx43+", "fx44+"]}}
 						]}
 					},
 					{"name": "Targeted", "style": {"color": "#9467bd"}, "esfilter": {"and": [
@@ -541,6 +558,20 @@ if (!Mozilla) var Mozilla={"name":"Mozilla", "edges":[]};
 							"esfilter": {"or": [
 								{"terms": {"cf_blocking_b2g": ["2.2+", "2.2?"]}},
 								{"terms": {"cf_blocking_loop": ["fx35?", "fx36?", "fx35+", "fx36+"]}}
+							]}
+						},
+						{"name": "2.5",
+							"start_date":"Jun 29, 2015",
+							"targetDate":"Jan 04, 2016",
+							"dateMarks": [
+								{"Start": "Jun 29, 2015"},
+								{"FC": "Nov 02, 2015"},
+								{"CC": "Jan 04, 2016"}
+							],
+							"style": {"color": "#2ca02c"},
+							"esfilter": {"or": [
+								{"terms": {"cf_blocking_b2g": ["2.5+", "2.5?"]}},
+								{"terms": {"cf_blocking_loop": ["fx37?", "fx38?", "fx39?", "fx40?", "fx41?", "fx42?", "fx43?", "fx44?", "fx37+", "fx38+", "fx39+", "fx40+", "fx41+", "fx42+", "fx43+", "fx44+"]}}
 							]}
 						},
 						{"name": "Targeted",
